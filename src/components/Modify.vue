@@ -3,7 +3,7 @@
         <ul>
             <li v-for="(order, index) in datapacket[0]" v-bind:key="index">
                 <p>{{order.name}}: {{order.quantity}}</p>
-                <input v-bind:id="index" type="number" placeholder= 0 min="0" max="10" v-model="update[index]">
+                <input v-bind:id="index" type="number" placeholder= 0 min="0" max="10" onkeypress="return event.charCode >= 48" v-model="update[index]">
             </li><br>
             <button v-on:click="updateOrder()">Update Order</button>
         </ul>
